@@ -1,9 +1,5 @@
 # Node.js React Web App to Linux on Azure
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: 'wwwroot'
-    Contents: 'web.config'
-    TargetFolder: 'dist'
+
 # Build a Node.js React app and deploy it to Azure as a Linux web app.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
@@ -73,3 +69,8 @@ stages:
                     InlineScript: |
                       npm install
                       npm run build --if-present
+                - task: CopyFiles@2
+                  inputs:
+                    SourceFolder: 'wwwroot'
+                    Contents: 'web.config'
+                    TargetFolder: 'dist'
