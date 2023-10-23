@@ -69,8 +69,3 @@ stages:
                     InlineScript: |
                       npm install
                       npm run build --if-present
-                - task: CopyFiles@2
-                  inputs:
-                    SourceFolder: 'wwwroot'
-                    Contents: 'web.config'
-                    TargetFolder: 'dist'
